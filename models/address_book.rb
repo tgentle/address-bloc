@@ -55,7 +55,6 @@ class AddressBook
     return nil
   end
 
-
   # Search AddressBook for a specific entry by name
   def binary_search(name)
     # #1
@@ -80,5 +79,19 @@ class AddressBook
 
     # #5
     return nil
+  end
+
+  def add_entry(name, phone_number, email)
+    # #9
+    index = 0
+    entries.each do |entry|
+      # #10
+      if name < entry.name
+        break
+      end
+      index+= 1
+    end
+    # #11
+    entries.insert(index, Entry.new(name, phone_number, email))
   end
 end
