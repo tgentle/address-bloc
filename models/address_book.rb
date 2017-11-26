@@ -11,6 +11,7 @@ class AddressBook
   def remove_entry(name, phone_number, email)
     delete_entry = nil
 
+<<<<<<< HEAD
     entries.each do |entry|
       if name == entry.name && phone_number == entry.phone_number && email == entry.email
         delete_entry = entry
@@ -30,6 +31,18 @@ class AddressBook
       end
       index+= 1
     end
+=======
+  def add_entry(name, phone_number, email)
+    # #9
+    index = 0
+    entries.each do |entry|
+      # #10
+      if name < entry.name
+        break
+      end
+      index+= 1
+    end
+>>>>>>> 67eccb8faf1c4b39d41791324999936598a264b6
     # #11
     entries.insert(index, Entry.new(name, phone_number, email))
   end
@@ -45,6 +58,7 @@ class AddressBook
     end
   end
 
+<<<<<<< HEAD
   def iterative_search(name)
     @entries.each do |entry|
       if entry.name == name
@@ -55,6 +69,8 @@ class AddressBook
     return nil
   end
 
+=======
+>>>>>>> 67eccb8faf1c4b39d41791324999936598a264b6
   # Search AddressBook for a specific entry by name
   def binary_search(name)
     # #1
@@ -65,6 +81,7 @@ class AddressBook
     while lower <= upper
       # #3
       mid = (lower + upper) / 2
+<<<<<<< HEAD
       mid_name = entries[mid].name
 
       # #4
@@ -106,6 +123,9 @@ class AddressBook
       # #3
       mid = (lower + upper) / 2
       mid_name = entries[mid].name
+=======
+      mid_name = entries.[mid].name
+>>>>>>> 67eccb8faf1c4b39d41791324999936598a264b6
 
       # #4
       if name == mid_name
