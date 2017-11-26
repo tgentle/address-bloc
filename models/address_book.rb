@@ -46,9 +46,9 @@ class AddressBook
   end
 
   def iterative_search(name)
-    @entires.each do |entry|
+    @entries.each do |entry|
       if entry.name == name
-        return entry_one
+        return entry
       end
     end
 
@@ -99,13 +99,13 @@ class AddressBook
   def binary_search(name)
     # #1
     lower = 0
-    upper = entires.length -1
+    upper = entries.length - 1
 
     # #2
     while lower <= upper
       # #3
       mid = (lower + upper) / 2
-      mid_name = entries.[mid].name
+      mid_name = entries[mid].name
 
       # #4
       if name == mid_name
