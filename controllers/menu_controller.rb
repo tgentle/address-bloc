@@ -17,7 +17,8 @@ class MenuController
     puts "3 - Search for an entry"
     puts "4 - Import entries from a CSV"
     puts "5 - View Entry n"
-    puts "6 - Exit"
+    puts "6 - Obliterate all entries"
+    puts "7 - Exit"
     print "Enter your selection: "
 
     # #3
@@ -46,6 +47,11 @@ class MenuController
       entry_n_submenu
       main_menu
     when 6
+      system "clear"
+      @address_book.obliterate
+      puts "all entries are deleted!"
+      main_menu
+    when 7
       puts "Good-Bye!"
       # #8
       exit(0)
@@ -135,6 +141,7 @@ def create_entry
   system "clear"
   puts "New entry created"
 end
+
 
 def search_entries
   # #9

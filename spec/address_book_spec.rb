@@ -6,33 +6,14 @@ RSpec.describe AddressBook do
 
   # #6
   def check_entry (entry, expected_name, expected_number, expected_email)
-<<<<<<< HEAD
-    expect(entry.name).to eq expected_name
-    expect(entry.phone_number).to eq expected_number
-    expect(entry.email).to eq expected_email
-=======
     expect(entry.name) .to eq expected_name
     expect(entry.phone_number) .to eq expected_number
     expect(entry.email) .to eq expected_email
->>>>>>> 67eccb8faf1c4b39d41791324999936598a264b6
-
-  end
-
-  # #2
-  describe "attributes" do
-    it "responds to entries" do
-      expect(book).to respond_to(:entries)
-    end
-    it "initializes entries as an array" do
-<<<<<<< HEAD
       expect(book.entries.size).to eq(0)
-=======
       expect(book.entries).to be_an(Array)
->>>>>>> 67eccb8faf1c4b39d41791324999936598a264b6
     end
   end
 
-<<<<<<< HEAD
   describe "#remove_entry" do
     it "removes an entry from the address book" do
       book = AddressBook.new
@@ -47,10 +28,8 @@ RSpec.describe AddressBook do
       book.remove_entry(name, phone_number, email)
       expect(book.entries.size).to eq 1
       expect(book.entries.first.name).to eq ("Ada Lovelace")
-=======
     it "initializes entries as empty" do
       expect(book.entries.size).to eq(0)
->>>>>>> 67eccb8faf1c4b39d41791324999936598a264b6
     end
   end
 
@@ -79,11 +58,8 @@ RSpec.describe AddressBook do
       book_size = book.entries.size
 
       # check the size of entries in AddressBook
-<<<<<<< HEAD
       expect(book_size).to eq 3
-=======
       expect (book_size) .to eq 5
->>>>>>> 67eccb8faf1c4b39d41791324999936598a264b6
     end
 
     # #4
@@ -107,30 +83,12 @@ RSpec.describe AddressBook do
       entry_three = book.entries[2]
       check_entry(entry_three, "Joe", "555-555-3660", "joe@blocmail.com")
     end
-<<<<<<< HEAD
-=======
-
-    it "imports the 4th entry" do
-      book.import_from_csv("entries.csv")
-      # Check the fourth entry
-      entry_four = book.entries[3]
-      check_entry(entry_four, "Sally", "555-555-4646", "sally@blocmail.com")
-    end
-
-    it "imports the 5th entry" do
-      book.import_from_csv("entries.csv")
-      # Check the fifth entry
-      entry_five = book.entries[4]
-      check_entry(entry_five, "Sussie", "555-555-2036", "sussie@blocmail.com")
-    end
->>>>>>> 67eccb8faf1c4b39d41791324999936598a264b6
   end
 
   context "importing from entries_2.csv" do
     it "imports the correct number of entries" do
       book.import_from_csv("entries_2.csv")
 
-<<<<<<< HEAD
       book_size = book.entries.size
 
       expect(book_size).to eq 3
@@ -155,7 +113,6 @@ RSpec.describe AddressBook do
       # Check the third entry
       entry_three = book.entries[2]
       check_entry(entry_three, "Joey", "555-555-3660", "joe@blocmail.com")
-=======
       expect(book_size) .to eq 3
     end
 
@@ -178,7 +135,6 @@ RSpec.describe AddressBook do
       # Check the third entry
       entry_three = book.entries[2]
       check_entry(entry_three, "Joe", "555-555-3660", "joe@blocmail.com")
->>>>>>> 67eccb8faf1c4b39d41791324999936598a264b6
     end
   end
 
@@ -211,7 +167,6 @@ RSpec.describe AddressBook do
       check_entry(entry, "Joe", "555-555-3660", "joe@blocmail.com")
     end
 
-<<<<<<< HEAD
     it "searches AddressBook for Billy" do
       book.import_from_csv("entries.csv")
       entry = book.binary_search("Billy")
@@ -246,7 +201,6 @@ RSpec.describe AddressBook do
       entry = book.iterative_search("Joe")
       expect(entry).to be_a Entry
       check_entry(entry, "Joe", "555-555-3660", "joe@blocmail.com")
-=======
     it "searches AddressBook for Sally" do
       book.import_from_csv("entries.csv")
       entry = book.binary_search("Sally")
@@ -259,16 +213,12 @@ RSpec.describe AddressBook do
       entry = book.binary_search("Sussie")
       expect(entry).to be_a Entry
       check_entry(entry, "Sussie", "555-555-2036", "sussie@blocmail.com")
->>>>>>> 67eccb8faf1c4b39d41791324999936598a264b6
     end
 
     it "searches AddressBook for Billy" do
       book.import_from_csv("entries.csv")
-<<<<<<< HEAD
       entry = book.iterative_search("Billy")
-=======
       entry = book.binary_search("Billy")
->>>>>>> 67eccb8faf1c4b39d41791324999936598a264b6
       expect(entry).to be_nil
     end
   end
